@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elementhal</title>
+
+    <!-- Tailwind CSS Link -->
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css">
+
+    <!-- Fontawesome Link -->
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+ 
+  </head>
+  <body class="bg-green-500"> <!-- Fondo verde más oscuro -->
+
+    <!-- Mostrar la barra de navegación solo si NO estamos en la página de inicio -->
+    {{#if isHome}}
+      <!-- No mostrar la barra de navegación en la página de inicio -->
+    {{else}}
+    <nav class="flex py-5 bg-green-500 text-white px-24"> <!-- Barra de navegación morada más suave -->
+      <div class="w-full text-center">
+        <h1 class="text-6xl font-bold text-purple-500">Elementhal</h1> <!-- Texto en morado más grande -->
+      </div>
+    </nav>
+    {{/if}}
+
+    {{{body}}}
+
+  </body>
+</html>
