@@ -12,6 +12,7 @@
 
 
     app.set('views', __dirname + '/views');
+    
     app.engine('.hbs', engine({
         extname: '.hbs',
     }));
@@ -30,7 +31,7 @@
         password:'root123',
         port:3306,
         database:'sistemaclinica'
-    }));
+    },'single'));
 
     app.use(session({
     secret:'secret',
@@ -42,6 +43,9 @@
     });
 
     app.use('/', loginRoutes);
+
+    app.use(express.static(__dirname + '/public'));
+
 
     app.get('/', (req, res) => {
         res.render('home', { isHome: true });

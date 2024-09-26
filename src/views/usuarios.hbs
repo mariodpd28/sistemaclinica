@@ -1,0 +1,70 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css">
+</head>
+<body class="bg-gray-200">
+
+    <div class="flex">
+       <!-- Barra de navegación izquierda -->
+       <div class="w-64 h-screen bg-gradient-to-b from-bg-green-600 to-bg-green-500 p-4 shadow-lg">
+           <h2 class="text-white text-2xl font-bold mb-6 tracking-wide">Módulos</h2>
+           <ul>
+               <li class="mb-4">
+                   <a href="/usuarios" class="text-white hover:bg-green-700 transition duration-300 block p-3 rounded-md text-lg font-semibold">
+                       Usuarios
+                   </a>
+               </li>
+               <li class="mb-4">
+                   <a href="/modulospaciente" class="text-white hover:bg-green-700 transition duration-300 block p-3 rounded-md text-lg font-semibold">
+                       Pacientes
+                   </a>
+               </li>
+               <li class="mb-4">
+                   <a href="/citas" class="text-white hover:bg-green-700 transition duration-300 block p-3 rounded-md text-lg font-semibold">
+                       Citas
+                   </a>
+               </li>
+               <li class="mb-4">
+                   <a href="/pagos" class="text-white hover:bg-green-700 transition duration-300 block p-3 rounded-md text-lg font-semibold">
+                       Pagos
+                   </a>
+               </li>
+           </ul>
+       </div>
+
+       <!-- Contenido principal con botones -->
+       <div class="flex-grow p-8">
+            <!-- Botones alineados horizontalmente -->
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <!-- Primer botón -->
+                <a href="/register" class="block">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-20 rounded-md text-xl w-full">
+                        Registro de usuarios
+                    </button>
+                </a>
+                <!-- Segundo botón -->
+                <a href="/modificarusuarios" class="block">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-20 rounded-md text-xl w-full">
+                        Editar usuarios
+                    </button>
+                </a>
+            </div>
+
+            <!-- Botón debajo -->
+            <div class="flex justify-center">
+                <a href="/user-reports" class="block w-full max-w-md">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-20 rounded-md text-xl w-full">
+                        Reportes usuarios
+                    </button>
+                </a>
+            </div>
+       </div>
+
+    </div>
+
+</body>
+</html>

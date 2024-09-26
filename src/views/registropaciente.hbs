@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Expediente</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css"></script>
+</head>
+<body class="bg-gray-200">
+
+  <!-- Contenedor principal con flex para agregar la barra lateral -->
+  <div class="flex">
+
+    <!-- Barra de navegación izquierda -->
+    <div class="w-64 h-screen bg-gradient-to-b from-bg-green-600 to-bg-green-500 p-4 shadow-lg">
+      <h2 class="text-white text-2xl font-bold mb-6 tracking-wide">Modulos</h2>
+      <ul>
+        <li class="mb-4">
+          <a href="/usuarios" class="text-white hover:bg-green-700 transition duration-300 block p-3 rounded-md text-lg font-semibold">
+            Usuarios
+          </a>
+        </li>
+        <li class="mb-4">
+          <a href="/modulospaciente" class="text-white hover:bg-green-700 transition duration-300 block p-3 rounded-md text-lg font-semibold">
+            Pacientes
+          </a>
+        </li>
+        <li class="mb-4">
+          <a href="/citas" class="text-white hover:bg-green-700 transition duration-300 block p-3 rounded-md text-lg font-semibold">
+            Citas
+          </a>
+        </li>
+        <li class="mb-4">
+          <a href="/pagos" class="text-white hover:bg-green-700 transition duration-300 block p-3 rounded-md text-lg font-semibold">
+            Pagos
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Contenido principal (Formulario) -->
+    <div class="block mx-auto my-12 p-8 bg-white w-3/4 border border-black rounded-lg shadow-lg">
+      <h1 class="text-3xl mb-8 font-bold">Formulario de Expediente</h1>
+      <form action="" method="POST" class="mt-4">
+        
+        <!-- Campo de Expediente -->
+        <div class="mb-4">
+          <label class="block">Expediente:</label>
+          <input type="text" name="expediente" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white" required>
+        </div>
+
+        <!-- Datos Generales -->
+        <h2 class="text-2xl font-bold">1. Datos Generales</h2>
+        
+        <div class="grid grid-cols-2 gap-4 my-4">
+          <!-- Primera columna -->
+          <div>
+            <label class="block">Nombre del Paciente:</label>
+            <input type="text" name="nombre_paciente" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white" required>
+          </div>
+          <div>
+            <label class="block">Fecha de nacimiento:</label>
+            <input type="date" name="fecha_nacimiento" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white" required>
+          </div>
+          <div>
+            <label class="block">Edad:</label>
+            <input type="number" name="edad" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white" required>
+          </div>
+          <div>
+            <label class="block">Lugar de nacimiento:</label>
+            <input type="text" name="lugar_nacimiento" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white" required>
+          </div>
+          <div>
+            <label class="block">Etnia:</label>
+            <input type="text" name="etnia" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white">
+          </div>
+          <div>
+            <label class="block">Dirección:</label>
+            <input type="text" name="direccion" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white">
+          </div>
+          <div>
+            <label class="block">Religión:</label>
+            <input type="text" name="religion" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white">
+          </div>
+          <div class="col-span-2">
+            <label class="block">Discapacidad (SI / NO):</label>
+            <input type="text" name="discapacidad" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white">
+          </div>
+          <div class="col-span-2">
+            <label class="block">Grado de funcionalidad:</label>
+            <input type="text" name="grado_funcionalidad" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white">
+          </div>
+          <div class="col-span-2">
+            <label class="block">Necesidad de apoyos:</label>
+            <input type="text" name="necesidad_apoyos" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white">
+          </div>
+          <div>
+            <label class="block">Escolaridad:</label>
+            <input type="text" name="escolaridad" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white">
+          </div>
+          <div>
+            <label class="block">Grado:</label>
+            <input type="text" name="grado" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white">
+          </div>
+          <div>
+            <label class="block">Institución:</label>
+            <input type="text" name="institucion" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white">
+          </div>
+          <div>
+            <label class="block">Encargad@:</label>
+            <input type="text" name="encargado" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white">
+          </div>
+          <div>
+            <label class="block">Teléfonos:</label>
+            <input type="tel" name="telefono" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white">
+          </div>
+          <div>
+            <label class="block">E-mail:</label>
+            <input type="email" name="email" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white">
+          </div>
+          <div>
+            <label class="block">Referido por:</label>
+            <input type="text" name="referido_por" class="border border-gray-200 w-full p-2 my-2 bg-gray-200 focus:bg-white">
+          </div>
+          <div>
+            <label class="block">Horario de Atención:</label>
+            <div class="flex space-x-4">
+              <input type="date" name="fecha_atencion" class="border border-gray-200 p-2 my-2 bg-gray-200 focus:bg-white w-1/2">
+              <input type="time" name="hora_atencion" class="border border-gray-200 p-2 my-2 bg-gray-200 focus:bg-white w-1/2">
+            </div>
+          </div>
+        </div>
+        
+        <button type="submit" class="rounded-md bg-green-500 w-full text-lg text-white font-semibold p-2 my-3 hover:bg-green-600 focus:bg-green-700">Guardar</button>
+
+      </form>
+    </div>
+    
+  </div>
+
+</body>
+</html>

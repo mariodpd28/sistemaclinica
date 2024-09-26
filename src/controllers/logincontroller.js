@@ -22,7 +22,7 @@ function auth(req, res) {
                             req.session.name = element.name;
 
                             // Redirigir a la página modulos.hbs después de autenticar
-                            res.redirect('/modulos');
+                            res.redirect('modulos');
                         }
                     });
                 });
@@ -32,6 +32,7 @@ function auth(req, res) {
         });
     });
 }
+
 
 function register(req, res) {
     if (req.session.loggedin == true) {
@@ -48,7 +49,50 @@ function modulos(req, res) {
         res.redirect('/login'); // Redirigir a login si no está autenticado
     }
 }
+function modulospaciente(req, res) {
+    if (req.session.loggedin) {
+        res.render('modulospaciente'); // Asegúrate de que la vista modulospaciente.hbs exista
+    } else {
+        res.redirect('/login'); // Redirigir a login si no está autenticado
+    }
+}
 
+function modificarpaciente(req, res) {
+    if (req.session.loggedin) {
+        res.render('modificarpaciente'); // Asegúrate de que la vista modulospaciente.hbs exista
+    } else {
+        res.redirect('/login'); // Redirigir a login si no está autenticado
+    }
+}
+function modificarusuarios(req, res) {
+    if (req.session.loggedin) {
+        req.getConnection((err, conn)=>{
+            conn.query('SELECT * FROM user',(err, user) => {
+                if(err){
+                    res.json(err);
+                }
+                res.render('modificarusuarios', {user});
+            });
+            });
+        }else {
+            res.redirect('/login'); // Redirigir a login si no está autenticado
+        }
+
+}
+function usuarios(req, res) {
+    if (req.session.loggedin) {
+        res.render('usuarios'); // Asegúrate de que la vista modulos.hbs exista
+    } else {
+        res.redirect('/login'); // Redirigir a login si no está autenticado
+    }
+}
+function registropaciente(req, res) {
+    if (req.session.loggedin) {
+        res.render('registropaciente'); // Asegúrate de que la vista modulos.hbs exista
+    } else {
+        res.redirect('/login'); // Redirigir a login si no está autenticado
+    }
+}
 function storeUser(req, res) {
     const data = req.body;
 
@@ -62,7 +106,7 @@ function storeUser(req, res) {
 
                     req.getConnection((err, conn) => {
                         conn.query('INSERT INTO user SET ?', [data], (err, rows) => {
-                            res.redirect('/');
+                            res.redirect('/modulos');
                         });
                     });
                 });
@@ -70,11 +114,49 @@ function storeUser(req, res) {
         });
     });
 }
+function insertpaciente(req,res){
+    const data = req.body;
 
+    req.getConnection((err,conn) => {
+    conn.query('INSERT INTO paciente SET ?',[data], (err, rows) =>{
+    res.redirect('/modulospaciente');
+    });
+    });
+}
+
+function crudeuser(req,res){
+    req.getConnection((err, conn)=>{
+    conn.query('SELECT * FROM user',(err, tasks) => {
+        if(err){
+            res.json(err);
+        }
+        console.log(tasks);
+    });
+    });
+
+    res.render('modificarusuarios');
+}
+
+function destroy(req, res){
+const email = req.body.email;
+req.getConnection((err, conn)=>{
+conn.query('DELETE FROM user WHERE email = ?', [email], (err, rows)=>{
+    res.redirect('/modificarusuarios');
+});
+});
+}
 module.exports = {
     login,
     register,
     storeUser,
     auth,
     modulos,
+    usuarios,
+    registropaciente,
+    modulospaciente,
+    modificarpaciente,
+    modificarusuarios,
+    insertpaciente,
+    crudeuser,
+    destroy,
 }

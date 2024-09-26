@@ -1,0 +1,61 @@
+<div class="flex">
+  <!-- Barra de navegación izquierda -->
+  <div class="w-64 h-screen bg-gradient-to-b from-bg-green-600 to-bg-green-500 p-4 shadow-lg">
+    <h2 class="text-white text-2xl font-bold mb-6 tracking-wide">Modulos</h2>
+    <ul>
+      <li class="mb-4">
+        <a href="/usuarios" class="text-white hover:bg-green-700 transition duration-300 block p-3 rounded-md text-lg font-semibold">
+          Usuarios
+        </a>
+      </li>
+      <li class="mb-4">
+        <a href="/modulospaciente" class="text-white hover:bg-green-700 transition duration-300 block p-3 rounded-md text-lg font-semibold">
+          Pacientes
+        </a>
+      </li>
+      <li class="mb-4">
+        <a href="/citas" class="text-white hover:bg-green-700 transition duration-300 block p-3 rounded-md text-lg font-semibold">
+          Citas
+        </a>
+      </li>
+      <li class="mb-4">
+        <a href="/pagos" class="text-white hover:bg-green-700 transition duration-300 block p-3 rounded-md text-lg font-semibold">
+          Pagos
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex-1">
+    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg mt-16">
+      <table class="table-fixed w-full">
+        <thead>
+          <tr class="bg-indigo-500 text-white">
+            <th class="w-20 py-4 ...">ID</th>
+            <th class="w-1/2 py-4 ...">Title</th>
+            <th class="w-1/16 py-4 ...">Created</th>
+            <th class="w-1/16 py-4 ...">Updated</th>
+            <th class="w-28 py-4 ...">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="py-3 px-6">858</td>
+            <td class="p-3">Intro to CSS</td>
+            <td class="p-3 text-center">12-03-2021 12:40:43</td>
+            <td class="p-3 text-center">12-03-2021 12:40:43</td>
+            <td class="p-3">
+              <button class="bg-red-500 text-white px-3 py-1 rounded-sm">
+                <i class="fas fa-trash"></i>
+              </button>
+              <button class="bg-green-500 text-white px-3 py-1 rounded-sm">
+                <i class="fas fa-pen"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

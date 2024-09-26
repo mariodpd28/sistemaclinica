@@ -1,0 +1,58 @@
+<div style="display: flex; height: 100vh;">
+  <!-- Barra de navegación izquierda -->
+  <div class="w-64 h-screen" style="bg-gradient-to-b from-bg-green-600 to-bg-green-500; padding: 16px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); flex-shrink: 0;">
+    <h2 style="color: white; font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; letter-spacing: 0.05rem;">Módulos</h2>
+    <ul>
+      <li style="margin-bottom: 1rem;">
+        <a href="/usuarios" style="color: white; padding: 12px; border-radius: 8px; display: block; font-size: 1.125rem; font-weight: 600; background: none; transition: background 0.3s ease;" onmouseover="this.style.backgroundColor='#15803d';" onmouseout="this.style.backgroundColor=''">Usuarios</a>
+      </li>
+      <li style="margin-bottom: 1rem;">
+        <a href="/modulospaciente" style="color: white; padding: 12px; border-radius: 8px; display: block; font-size: 1.125rem; font-weight: 600; background: none; transition: background 0.3s ease;" onmouseover="this.style.backgroundColor='#15803d';" onmouseout="this.style.backgroundColor=''">Pacientes</a>
+      </li>
+      <li style="margin-bottom: 1rem;">
+        <a href="/citas" style="color: white; padding: 12px; border-radius: 8px; display: block; font-size: 1.125rem; font-weight: 600; background: none; transition: background 0.3s ease;" onmouseover="this.style.backgroundColor='#15803d';" onmouseout="this.style.backgroundColor=''">Citas</a>
+      </li>
+      <li style="margin-bottom: 1rem;">
+        <a href="/pagos" style="color: white; padding: 12px; border-radius: 8px; display: block; font-size: 1.125rem; font-weight: 600; background: none; transition: background 0.3s ease;" onmouseover="this.style.backgroundColor='#15803d';" onmouseout="this.style.backgroundColor=''">Pagos</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Contenido principal -->
+  <div style="flex-grow: 1; padding: 24px;">
+    <div style="background-color: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); overflow: hidden;">
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="background-color: #6366f1; color: white;">
+            <th style="padding: 16px; text-align: left;">Email</th>
+            <th style="padding: 16px; text-align: left;">Nombre</th>
+            <th style="padding: 16px; text-align: center;">Contraseña</th>
+            <th style="padding: 16px; text-align: center;">Estado</th>
+            <th style="padding: 16px; text-align: center;">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each user}}
+          <tr style="border-bottom: 1px solid #e5e7eb;">
+            <td style="padding: 12px 24px; text-align: left;">{{email}}</td>
+            <td style="padding: 12px 24px; text-align: left;">{{name}}</td>
+            <td style="padding: 12px 24px; text-align: center; word-break: break-all;">{{password}}</td>
+            <td style="padding: 12px 24px; text-align: center; word-break: break-all;">{{estado}}</td>
+            <td style="padding: 12px 24px; text-align: center;">
+              <form action="user/destroy" method="POST" class="mx-2">
+              <input type="hidden" value="{{email}}" name="email">
+                <button style="background-color: #ef4444; color: white; padding: 8px 12px; border-radius: 4px; margin-right: 4px; type="submit"></button>
+                <i class="fas fa-trash"></i>
+              </button>
+              </form>
+              <button style="background-color: #22c55e; color: white; padding: 8px 12px; border-radius: 4px;">
+                <i class="fas fa-pen"></i>
+              </button>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
